@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="Goordinates",
-    version="1.0.1",
+    version="1.0.3",
     author="Duoslow",
     author_email="heniugur@gmail.com",
     description="Outputs latitude/longitude coordinates from any Google Map URL.",

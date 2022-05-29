@@ -5,5 +5,5 @@
 ```
 from Goordinates import Gmap
 
-lat, lng = Gmap.get_cordinate(map_url)
+lat, lng = Gmap.GetCoordinate(map_url)
 ```

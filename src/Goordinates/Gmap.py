@@ -34,7 +34,7 @@ def GetCoordinate(url:str) -> str:
         else:
             return None,None
 
-    elif '/maps/place' in url:
+    elif '/maps/place' or '/maps/@' in url:
         pattern = re.compile(r'@(-?\d+\.\d+),(-?\d+\.\d+)')
         match = re.search(pattern, url)
         if match:
