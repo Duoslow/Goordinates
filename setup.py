@@ -11,14 +11,15 @@ setuptools.setup(
     description="Outputs latitude/longitude coordinates from any Google Map URL.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/pypa/sampleproject",
+    url="https://github.com/Duoslow/Goordinates",
     project_urls={
-        "Bug Tracker": "https://github.com/pypa/sampleproject/issues",
+        "Bug Tracker": "https://github.com/Duoslow/Goordinates/issues",
     },
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
+        "Development Status :: 4 - Beta",
     ],
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
