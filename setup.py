@@ -4,8 +4,8 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="Goordinates-Duoslow",
-    version="0.0.1",
+    name="Goordinates",
+    version="1.0.0",
     author="Duoslow",
     author_email="heniugur@gmail.com",
     description="Outputs latitude/longitude coordinates from any Google Map URL.",
@@ -19,9 +19,10 @@ setuptools.setup(
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
-        "Development Status :: 4 - Beta",
+        "Development Status :: 5 - Production/Stable",
     ],
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
     python_requires=">=3.6",
+    install_requires=['urllib3','requests']
 )
