@@ -1,20 +1,26 @@
 import requests, re
 from urllib.parse import unquote
 
-def get_cordinate(url):
+def GetCoordinate(url:str) -> str:
     """
-    get latitude and longitude information from a Google Map URL.
-
+    Get latitude and longitude information from a Google Map URL.
+    
     Parameters
-    ----------
         url : str
             google map url
+    
     Returns
-    ----------
         lat : str
             latitude from url
         lng : str
             longitude from url
+            
+    Supported urls
+        https://goo.gl/maps/  
+
+        https://www.google.com/maps/place/  
+        
+        https://www.google.com/maps/embed?pb=  
     
     """
     
@@ -41,15 +47,18 @@ def get_cordinate(url):
     elif 'goo.gl/maps/' in url:
         raw_url = requests.get(url).url
         raw_url = unquote(raw_url)
-        
-        if len(raw_url.split("@",1)) == 2:
-            lat = raw_url.split("@",1)[1].split(",",2)[0]
-            lng = raw_url.split("@",1)[1].split(",",2)[1]
-            return lat, lng
-        else:
-            lat = raw_url.split("ll=",1)[1].split("&",1)[0].split(",",1)[0]
-            lng = raw_url.split("ll=",1)[1].split("&",1)[0].split(",",1)[1]
-            return lat, lng
+        try:
+            if len(raw_url.split("@",1)) == 2:
+                lat = raw_url.split("@",1)[1].split(",",2)[0]
+                lng = raw_url.split("@",1)[1].split(",",2)[1]
+                return lat, lng
+            else:
+                lat = raw_url.split("ll=",1)[1].split("&",1)[0].split(",",1)[0]
+                lng = raw_url.split("ll=",1)[1].split("&",1)[0].split(",",1)[1]
+                return lat, lng
+        except:
+            print("[Goordinates] {} is broken.".format(url))
+            return None, None
     else:
-        print("[Goordinates] This url is not supported.")
+        print("[Goordinates] This {} is not supported.".format(url))
         return None, None

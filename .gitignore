@@ -1,2 +1,3 @@
 dist/
 src/Goordinates.egg-info/
+.pypirc
