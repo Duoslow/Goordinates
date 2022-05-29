@@ -40,7 +40,7 @@ def get_cordinate(url):
     
     elif 'goo.gl/maps/' in url:
         raw_url = requests.get(url).url
-        raw_url = unquote(raw_url)              # YAVAŞ SÜREN KISIM
+        raw_url = unquote(raw_url)
         
         if len(raw_url.split("@",1)) == 2:
             lat = raw_url.split("@",1)[1].split(",",2)[0]
